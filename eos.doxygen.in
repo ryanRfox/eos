@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "EOS.IO"
-PROJECT_NUMBER         = DAWN ${DOXY_EOS_VERSION}
+PROJECT_NUMBER         = "EOSIO ${DOXY_EOS_VERSION}"
 PROJECT_BRIEF          =
 PROJECT_LOGO           = eos-logo.png
 OUTPUT_DIRECTORY       =
@@ -171,7 +171,7 @@ INPUT_FILTER           =
 FILTER_PATTERNS        =
 FILTER_SOURCE_FILES    = NO
 FILTER_SOURCE_PATTERNS =
-USE_MDFILE_AS_MAINPAGE = contracts/eoslib/mainpage.md
+USE_MDFILE_AS_MAINPAGE = contracts/eosiolib/mainpage.md
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing
 #---------------------------------------------------------------------------
@@ -314,13 +314,14 @@ PERLMOD_MAKEVAR_PREFIX =
 # Configuration options related to the preprocessor
 #---------------------------------------------------------------------------
 ENABLE_PREPROCESSING   = YES
-MACRO_EXPANSION        = NO
-EXPAND_ONLY_PREDEF     = NO
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
 SEARCH_INCLUDES        = YES
 INCLUDE_PATH           =
 INCLUDE_FILE_PATTERNS  =
-PREDEFINED             =
-EXPAND_AS_DEFINED      =
+PREDEFINED             = "PACKED(name)=__attribute((packed))(name)"\
+                         __attribute(x)=
+EXPAND_AS_DEFINED      = YES
 SKIP_FUNCTION_MACROS   = YES
 #---------------------------------------------------------------------------
 # Configuration options related to external references
